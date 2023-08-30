@@ -12,7 +12,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	return (BSThelper(tree, INT_MIN, INT_MAX));
+	return (btib_helper(tree, INT_MIN, INT_MAX));
 }
 
 /**
@@ -25,12 +25,12 @@ int binary_tree_is_bst(const binary_tree_t *tree)
  * Return: 1 if tree is a valid BST
  *         0 otherwise
  */
-int BSThelper(const binary_tree_t *tree, int min, int max)
+int btib_helper(const binary_tree_t *tree, int min, int max)
 {
 	if (tree == NULL)
 		return (1);
 	if (tree->n > max || tree->n < min)
 		return (0);
-	return (BSThelper(tree->left, min, tree->n - 1)
-			&& BSThelper(tree->right, tree->n + 1, max));
+	return (btib_helper(tree->left, min, tree->n - 1)
+			&& btib_helper(tree->right, tree->n + 1, max));
 }
