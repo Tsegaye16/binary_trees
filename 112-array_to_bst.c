@@ -9,7 +9,7 @@
 bst_t *array_to_bst(int *array, size_t size)
 {
 	bst_t *root;
-	size_t k;
+	unsigned int k;
 
 	for (k = 0; k < size; k++)
 		bst_insert(&root, array[k]);
