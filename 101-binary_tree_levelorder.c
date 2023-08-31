@@ -12,8 +12,8 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 
 	if (tree == NULL && func == NULL)
 		return;
-	max_level = binary_tree_height(tree);
-	for (level = 1; level < max_level; level++)
+	max_level = binary_tree_height(tree) + 1;
+	for (level = 1; level <= max_level; level++)
 		btlo_helper(tree, func, level);
 }
 /**
