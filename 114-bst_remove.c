@@ -33,7 +33,7 @@ bst_t *bst_remove(bst_t *root, int value)
 			free(root);
 			return (temp);
 		}
-		temp = bst_min_val(root->left);
+		temp = bst_min_val(root->right);
 		root->n = temp->n;
 		root->right = bst_remove(root->right, temp->n);
 	}
@@ -47,9 +47,8 @@ bst_t *bst_remove(bst_t *root, int value)
  */
 bst_t *bst_min_val(bst_t *root)
 {
-	bst_t *current;
+	bst_t *current = root;
 
-	current = root;
 	while (current->left)
 		current = current->left;
 	return (current);
